@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <title>Study Duration Chart for This Week</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Weekly Study Duration Chart</h1>
+    <div class="container">
+        <div class="chart-container">
+            <canvas id="studyDurationChart" width="800" height="400"></canvas>
+        </div>
+        <div class="additional-text">
+            <p>Total Amount of studying this week so far: {{ total_weekly_hours_and_minutes }} </p>
+            <p>Click <a href="/">here</a> to go back.</p>
+        </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var ctx = document.getElementById('studyDurationChart').getContext('2d');
+
+            var durationData = JSON.parse('{{ duration_data_json | safe }}');
+
+            var studyDurationChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                    datasets: [{
+                        label: 'Study Duration (Hours)',
+                        data: durationData,
+                        backgroundColor: 'rgba(33, 69, 49, 0.5)', 
+                        borderColor: 'rgba(30, 65, 46, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Day of the week'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: 24,
+                            title: {
+                                display: true,
+                                text: 'Total Duration (Hours)'
+                            }
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return 'Duration: ' + context.parsed.y + ' hours';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,279 @@
+/* Global Styles */
+body {
+  background: #ffffff;
+  color: #333333;
+  margin-top: 5rem;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display:flex;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+
+/* Navigation bar Styles */
+.bg-steel {
+  background-color: #496055;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+
+/* Content Section Styles */
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #89b180;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.form-check-label {
+  margin-left: 1rem;
+}
+
+
+
+/* Style for the stopwatch */
+.stopwatch {
+  margin: 0 auto; 
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 40px; 
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.stopwatch .display {
+  font-size: 48px; 
+  margin-bottom: 30px;
+  border: 2px solid #ddd; 
+  padding: 15px; 
+  border-radius: 10px; 
+}
+
+.stopwatch .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+}
+
+.stopwatch .btn {
+  font-size: 24px; 
+  padding: 15px 30px; 
+  cursor: pointer;
+  background-color: #496055;
+  color: #fff;
+  border: none;
+  border-radius: 10px; 
+}
+
+.stopwatch .btn:hover {
+  background-color: #395049;
+}
+
+.stopwatch .btn:focus {
+  outline: none;
+}
+
+.daily_studytime {
+  display : flex;
+}
+
+/**/
+
+.custom-dropdown-menu {
+  background-color: #496055; 
+  border: none; 
+}
+.custom-activity-button {
+  background-color: transparent; 
+  color: #fff; 
+  border: none; 
+}
+
+
+/* logo */
+.logo {
+  width: 150px; 
+  height: auto; 
+}
+
+
+
+/* Style for the login form and registration form */
+.login-form,.register-form{
+    max-width: 400px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin: 0 auto; 
+  
+}
+
+.login-form legend, .register-form legend{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.login-form .form-group, .register-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form .form-control-label, .register-form .register-control-label {
+    font-weight: bold;
+}
+
+.login-form .form-control, .register-form .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form .form-check-label,.register-form .form-check-label {
+    font-weight: normal;
+}
+
+.login-form .btn, .register-form .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #496055;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form .btn:hover, .register-form .btn:hover{
+  background-color: #496055;
+  box-shadow: 0 0 10px rgb(30, 65, 46);
+
+}
+
+.daily_studytime {
+  color: black
+  ;
+}
+.profile-picture {
+    width: 30px;
+    height: 30px; 
+    border-radius: 50%;
+    object-fit: cover; 
+    margin: 5px;
+}
+
+/* Style for the account page */
+.account-form {
+  max-width: 300px; /* Reduced max-width */
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin: 0 auto;
+}
+
+.account-form .form-group {
+  margin-bottom: 15px; /* Reduced margin-bottom */
+}
+
+.account-form .form-control-label {
+  font-weight: bold;
+  font-size: 16px; /* Reduced font size */
+}
+
+.account-form .form-control {
+  width: 100%;
+  padding: 8px; /* Reduced padding */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.account-form .btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #496055;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.account-form .btn:hover {
+  background-color: #496055;
+  box-shadow: 0 0 10px rgb(30, 65, 46);
+}
+
+.account-img {
+  width: 100px; 
+  height: 100px; 
+  border-radius: 50%;
+  margin-right: 10px; 
+}

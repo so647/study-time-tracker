@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+    <title>Study Duration Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Monthly Study Duration Chart</h1>
+    
+    <div class="container">
+        <div class="chart-container">
+            <canvas id="studyDurationChart" width="800" height="400"></canvas>
+        </div>
+        <div class="additional-text">
+        <p>Total Amount of studying this month so far: {{ total_monthly_hours_and_minutes }} </p>
+            <p>Click <a href="/">here</a> to go back.</p>
+        </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var ctx = document.getElementById('studyDurationChart').getContext('2d');
+            var monthlyDurationData = JSON.parse('{{ monthly_duration | safe }}');
+            var studyDurationChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    datasets: [{
+                        label: 'Study Duration (Hours)',
+                        data: monthlyDurationData,  
+                        backgroundColor: 'rgba(33, 69, 49, 0.5)', 
+                        borderColor: 'rgba(30, 65, 46, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Months'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            max: 24,
+                            title: {
+                                display: true,
+                                text: 'Total Duration (Hours)'
+                            }
+                        }
+                    },
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return 'Duration: ' + context.parsed.y + ' hours';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+{% endblock %}
