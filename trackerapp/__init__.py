@@ -26,9 +26,8 @@ app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER')
 app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASS')
 mail = Mail(app)
 
-from trackerapp import routes  # Import routes after initializing db
+from trackerapp import routes  
 
-# Create tables before the first request
 @app.before_request
 def create_tables():
     db.create_all()

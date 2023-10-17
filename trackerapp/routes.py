@@ -19,11 +19,8 @@ def home():
     image_file = None
 
     if current_user.is_authenticated:
-        # Retrieve the user's profile image URL when authenticated
         image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
-
     if current_user.is_authenticated:
-        
         return render_template('home_signed_in.html', title='Home', image_file=image_file)
     else:
         return render_template('home_signed_out.html', title='Home', image_file=image_file)
