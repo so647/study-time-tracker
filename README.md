@@ -41,3 +41,4 @@ You can also view a chart for the current week, month and even year!
 ![Monthly chart](assets/monthly-duration-chart.png)
 
 ## Account Page
+![Account](assets/account-page.png)
